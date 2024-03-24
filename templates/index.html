@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HVV Live Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""></script>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  <body>
+    <div id="controls-bg"></div>
+    <div id="controls">
+      <div id="logo"><span>live</span>karte</div>
+      
+      <h1>Verkehrsarten</h1>
+      <label for="U_BAHN"><input type="checkbox" id="U_BAHN" name="vehicleType" value="U_BAHN" checked />U Bahnen</label><br />
+      <label for="S_BAHN"><input type="checkbox" id="S_BAHN" name="vehicleType" value="S_BAHN" checked />S Bahnen</label><br />
+      <label for="REGIONALBUS"><input type="checkbox" id="REGIONALBUS" name="vehicleType" value="REGIONALBUS" checked />Regionalbusse</label><br />
+      <label for="XPRESSBUS"><input type="checkbox" id="XPRESSBUS" name="vehicleType" value="XPRESSBUS" checked />XPress Busse</label></br />
+
+      <h1>Verspätungen</h1>
+      <label for="delayed"><input type="checkbox" id="delayed" name="delayed" />Mehr als 5min verspätet?</label><br />
+
+      <h1>Heatmap (letzten 24h)</h1>
+      <div class="color-box" id="color-1"></div>
+      <div class="color-box" id="color-2"></div>
+      <div class="color-box" id="color-3"></div>
+      <div class="color-box" id="color-4"></div>
+      <div class="color-box" id="color-5"></div>
+    </div>
+    <div id="mapid"></div>
+    <script src="../static/leaflet-heatmap.js"></script>
+    <script src="../static/leaf.js"></script>
+    <script src="../static/script.js"></script>
+  </body>
+</html>

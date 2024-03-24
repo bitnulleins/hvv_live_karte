@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dadp
+  labels:
+    service: dadp
+spec:
+  selector:
+    matchLabels:
+      service: dadp
+  template:
+    metadata:
+      labels:
+        service: dadp
+    spec:
+      containers:
+        - image: mongo
+          name: mongo
+          volumeMounts:
+            - mountPath: "/var/www/html/data"
+              name: mongo-volume # Hier können Sie einen beliebigen Namen wählen
+          args: ["--dbpath","/data/db"]
+          env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-creds
+                key: username
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-creds
+                key: password
+                volumes:
+      volumes:
+        - name: mongo-volume
+          persistentVolumeClaim:
+            claimName: mongo-pvc # Dies ist der Name aus der YAML - Da

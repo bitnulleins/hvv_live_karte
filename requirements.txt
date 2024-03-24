@@ -1,0 +1,10 @@
+requests
+hmac
+kafka-python
+Flask
+python-dotenv
+pyproj
+pymongo
+pyspark
+luigi
+python-daemon

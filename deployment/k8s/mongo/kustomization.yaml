@@ -1,0 +1,5 @@
+resources:
+  - mongodb-pvc.yaml
+  - mongodb-secrets.yaml
+  - mongodb-deployment.yaml
+  - mongodb-service.yaml
